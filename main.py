@@ -1,16 +1,32 @@
-# This is a sample Python script.
+from PyQt5 import uic
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import *
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+class SimpleTextEditGUI(QMainWindow):
+
+    def __init__(self):
+        super(SimpleTextEditGUI, self).__init__()
+        uic.loadUi('windowEditor.ui', self)
+        self.show()
+
+        # set initial window title
+        self.setWindowTitle("SimpleTextEdit") # change to file name once loaded
+
+        # select font size actions
+        self.action12pt.triggered.connect(lambda: self.change_font_size(12))
+        self.action18pt.triggered.connect(lambda: self.change_font_size(18))
+        self.action24pt.triggered.connect(lambda: self.change_font_size(24))
+
+    def change_font_size(self, font_size):
+        self.mainTextEdit.setFont(QFont("Arial", font_size))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
+def main():
+    app = QApplication([])
+    window = SimpleTextEditGUI()
+    app.exec()
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
