@@ -16,7 +16,17 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QPlainTextEdit" name="mainTextEdit"/>
+     <widget class="QPlainTextEdit" name="mainTextEdit">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -35,8 +45,7 @@
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
-    <addaction name="separator"/>
-    <addaction name="actionExit_2"/>
+    <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
@@ -50,7 +59,16 @@
      <addaction name="action18pt"/>
      <addaction name="action24pt"/>
     </widget>
+    <widget class="QMenu" name="menuFont_Style">
+     <property name="title">
+      <string>Font Style</string>
+     </property>
+     <addaction name="actionArial"/>
+     <addaction name="actionTimes"/>
+     <addaction name="actionHelvetica"/>
+    </widget>
     <addaction name="menuFont_Size"/>
+    <addaction name="menuFont_Style"/>
    </widget>
    <addaction name="menuFIle"/>
    <addaction name="menuOptions"/>
@@ -66,16 +84,6 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExit">
-   <property name="text">
-    <string>Exit</string>
-   </property>
-  </action>
-  <action name="actionExit_2">
-   <property name="text">
-    <string>Exit</string>
-   </property>
-  </action>
   <action name="action12pt">
    <property name="text">
     <string>12pt</string>
@@ -89,6 +97,26 @@
   <action name="action24pt">
    <property name="text">
     <string>24pt</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionArial">
+   <property name="text">
+    <string>Arial</string>
+   </property>
+  </action>
+  <action name="actionTimes">
+   <property name="text">
+    <string>Times</string>
+   </property>
+  </action>
+  <action name="actionHelvetica">
+   <property name="text">
+    <string>Helvetica</string>
    </property>
   </action>
  </widget>
